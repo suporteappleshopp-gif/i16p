@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ShoppigStore — Produto</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
+    body{background:#d9d9d9;color:#000;display:flex;align-items:center;justify-content:center;min-height:100vh}
+    .container{width:960px;max-width:95%;background:#efefef;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.08);overflow:hidden}
+    header{display:flex;align-items:center;gap:12px;padding:18px 24px;border-bottom:1px solid #eee}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px}
+    main{display:flex;gap:30px;padding:26px}
+    .product-image img{max-width:100%;height:auto;border-radius:8px;border:1px solid #e6e9ee}
+    .product-info{width:380px;flex-shrink:0}
+    .product-type{font-size:13px;color:#666;margin-bottom:8px;text-transform:uppercase}
+    .product-title{font-size:22px;font-weight:700;margin-bottom:14px}
+    .price-box{background:#fafafa;padding:18px;border-radius:10px;border:1px solid #f0f0f0}
+    .price{font-size:28px;font-weight:800;margin:6px 0}
+    .installments{font-size:14px;color:#145214;margin-top:8px}
+    .buy-row{display:flex;gap:12px;margin-top:18px}
+    .btn{flex:1;padding:12px;border-radius:8px;border:0;cursor:pointer;font-weight:700}
+    .btn-buy{background:#0f3d0f;color:#fff}
+
+    /* Página de Endereço */
+    #enderecoPage{
+      display:none;
+      padding:28px;
+      background:#e8e8e8;
+      border-top:2px solid #ccc;
+    }
+    .endereco-box{
+      background:white;
+      padding:24px;
+      border-radius:12px;
+      max-width:720px;
+      margin:auto;
+    }
+    .resumo{
+      display:flex;
+      gap:14px;
+      margin-bottom:20px;
+      background:#fafafa;
+      border:1px solid #ddd;
+      padding:14px;
+      border-radius:10px;
+      align-items:center;
+    }
+    .resumo img{
+      width:80px;
+      border-radius:8px;
+      border:1px solid #ccc;
+    }
+    input{
+      width:100%;
+      padding:10px;
+      margin:8px 0 14px;
+      border:1px solid #ccc;
+      border-radius:8px;
+    }
+    .btn-voltar{
+      background:#444;
+      color:white;
+      padding:12px;
+      border-radius:8px;
+      width:100%;
+      border:0;
+      margin-top:10px;
+      font-weight:bold;
+      cursor:pointer;
+    }
+    .btn-final{
+      background:#0f3d0f;
+      color:white;
+      padding:12px;
+      border-radius:8px;
+      width:100%;
+      border:0;
+      margin-top:10px;
+      font-weight:bold;
+      cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <img src="blackfriday2.jpeg" style="height:80px; margin:auto;">
+      <div class="logo"><span>ShoppigStore</span></div>
+    </header>
+
+    <!-- PAGINA DO PRODUTO -->
+    <main id="productPage">
+      <div class="product-image">
+        <img src="iphone16propreto.jpeg">
+      </div>
+
+      <div class="product-info">
+        <div class="product-type">Celular móvel</div>
+        <div class="product-title">iPhone 16 Pro — Preto (512 GB)</div>
+
+        <!-- Botão de avaliações (sem seção de avaliações) -->
+        <div class="rating"
+             style="margin:10px 0; cursor:pointer; font-size:20px; color:#145214;">
+          ★★★★★ <span style="font-size:14px;color:#000;">(ver avaliações)</span>
+        </div>
+
+        <div class="price-box">
+          <div style="font-size:13px;color:#666">Preço</div>
+          <div class="price">R$ 5.499,00</div>
+          <div class="installments">Até 12x de R$ 458,25 sem juros</div>
+
+          <div class="buy-row">
+            <button class="btn btn-buy" id="buyNow">Comprar agora</button>
+          </div>
+
+          <div style="margin-top:12px;font-size:15px;color:#145214;font-weight:700;">🚚 Frete grátis para todo o Brasil</div>
+        </div>
+      </div>
+    </main>
+
+    <!-- PAGAMENTO / ENDEREÇO -->
+    <section id="enderecoPage">
+      <div class="endereco-box">
+
+        <h2 style="text-align:center;margin-bottom:18px;">Finalizar Compra</h2>
+
+        <div class="resumo">
+          <img src="iphone16propreto.jpeg">
+          <div>
+            <div style="font-weight:bold;">iPhone 16 Pro — Preto (512 GB)</div>
+            <div style="color:#145214;font-weight:bold;">R$ 5.499,00</div>
+          </div>
+        </div>
+
+        <label>Nome completo</label>
+        <input type="text">
+
+        <label>CPF</label>
+        <input type="text">
+
+        <label>Endereço</label>
+        <input type="text">
+
+        <label>Número</label>
+        <input type="text">
+
+        <label>Complemento</label>
+        <input type="text">
+
+        <label>Cidade</label>
+        <input type="text">
+
+        <label>CEP</label>
+        <input type="text">
+
+        <button class="btn-final" id="payBtn">Finalizar Pedido</button>
+        <button class="btn-voltar" id="backBtn">← Voltar para o produto</button>
+      </div>
+    </section>
+
+    <!-- CONTATOS -->
+    <footer style="text-align:center; padding:22px; margin-top:20px; background:#d9d9d9; border-top:1px solid #bbb;">
+      <div style="font-size:16px; margin-bottom:6px;">
+        📞 <strong>Atendimento ao cliente:</strong> 0800 777 9000
+      </div>
+      <div style="font-size:16px; margin-bottom:6px;">
+        ✉️ <strong>E-mail de suporte:</strong> suporteappleshopp@gmail.com
+      </div>
+      <div style="font-size:14px; margin-top:10px; color:#444;">
+        © 2025 AppleShopp – Todos os direitos reservados
+      </div>
+    </footer>
+
+  </div>
+
+<script>
+  const buy = document.getElementById("buyNow");
+  const pay = document.getElementById("payBtn");
+  const productPage = document.getElementById("productPage");
+  const enderecoPage = document.getElementById("enderecoPage");
+  const back = document.getElementById("backBtn");
+
+  buy.onclick = () => {
+    productPage.style.display = "none";
+    enderecoPage.style.display = "block";
+    window.scrollTo(0,0);
+  };
+
+  back.onclick = () => {
+    enderecoPage.style.display = "none";
+    productPage.style.display = "flex";
+    window.scrollTo(0,0);
+  };
+
+  /* LINK DE PAGAMENTO ATUALIZADO */
+  pay.onclick = () => {
+    window.location.href = "https://mpago.la/2GsLZDe";
+  };
+</script>
+
+</body>
+</html>
