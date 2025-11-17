@@ -8,8 +8,9 @@
     *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
     body{background:#d9d9d9;color:#000;display:flex;align-items:center;justify-content:center;min-height:100vh}
     .container{width:960px;max-width:95%;background:#efefef;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.08);overflow:hidden}
-    header{display:flex;align-items:center;gap:12px;padding:18px 24px;border-bottom:1px solid #eee}
+    header{display:flex;align-items:center;justify-content:center;gap:12px;padding:18px 24px;border-bottom:1px solid #eee}
     .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px}
+
     main{display:flex;gap:30px;padding:26px}
     .product-image img{max-width:100%;height:auto;border-radius:8px;border:1px solid #e6e9ee}
     .product-info{width:380px;flex-shrink:0}
@@ -21,8 +22,9 @@
     .buy-row{display:flex;gap:12px;margin-top:18px}
     .btn{flex:1;padding:12px;border-radius:8px;border:0;cursor:pointer;font-weight:700}
     .btn-buy{background:#0f3d0f;color:#fff}
+    footer{text-align:center;padding:16px;color:#444;font-size:14px}
 
-    /* Página de Endereço */
+    /* PÁGINA ENDEREÇO */
     #enderecoPage{
       display:none;
       padding:28px;
@@ -51,6 +53,7 @@
       border-radius:8px;
       border:1px solid #ccc;
     }
+
     input{
       width:100%;
       padding:10px;
@@ -58,6 +61,7 @@
       border:1px solid #ccc;
       border-radius:8px;
     }
+
     .btn-voltar{
       background:#444;
       color:white;
@@ -80,17 +84,67 @@
       font-weight:bold;
       cursor:pointer;
     }
+
+    /* PÁGINA DE AVALIAÇÕES */
+    #reviewsPage{
+      display:none;
+      padding:26px;
+      background:#e5e5e5;
+      border-top:1px solid #ccc;
+    }
+
+    /* RESPONSIVIDADE */
+    @media (max-width:768px){
+
+      body{display:block;}
+
+      .container{
+        width:100%;
+        max-width:100%;
+        border-radius:0;
+        box-shadow:none;
+      }
+
+      header img{
+        height:60px;
+      }
+
+      main{
+        flex-direction:column;
+        padding:18px;
+        gap:18px;
+      }
+
+      .product-info{
+        width:100%;
+      }
+
+      .buy-row{
+        flex-direction:column;
+      }
+
+      .resumo img{
+        width:60px;
+      }
+
+      .endereco-box{
+        width:100%;
+        padding:18px;
+      }
+    }
+
   </style>
 </head>
 <body>
+
   <div class="container">
 
     <header>
-      <img src="blackfriday2.jpeg" style="height:80px; margin:auto;">
+      <img src="blackfriday2.jpeg" style="height:80px;">
       <div class="logo"><span>ShoppigStore</span></div>
     </header>
 
-    <!-- PAGINA DO PRODUTO -->
+    <!-- PÁGINA DO PRODUTO -->
     <main id="productPage">
       <div class="product-image">
         <img src="iphone16propreto.jpeg">
@@ -98,10 +152,10 @@
 
       <div class="product-info">
         <div class="product-type">Celular móvel</div>
+
         <div class="product-title">iPhone 16 Pro — Preto (512 GB)</div>
 
-        <!-- Botão de avaliações (sem seção de avaliações) -->
-        <div class="rating"
+        <div class="rating" id="openReviews"
              style="margin:10px 0; cursor:pointer; font-size:20px; color:#145214;">
           ★★★★★ <span style="font-size:14px;color:#000;">(ver avaliações)</span>
         </div>
@@ -120,7 +174,32 @@
       </div>
     </main>
 
-    <!-- PAGAMENTO / ENDEREÇO -->
+    <!-- PÁGINA DE AVALIAÇÕES -->
+    <section id="reviewsPage">
+      <h2 style="margin-bottom:16px;">Avaliações</h2>
+
+      <div style="display:flex;gap:14px;background:white;padding:20px;margin-bottom:18px;border-radius:14px;">
+        <img src="https://i.pravatar.cc/150?img=11" style="width:60px;height:60px;border-radius:50%;">
+        <div><div style="font-size:18px;color:#145214;">★★★★★</div>Excelente produto, entrega muito rápida.</div>
+      </div>
+
+      <div style="display:flex;gap:14px;background:white;padding:20px;margin-bottom:18px;border-radius:14px;">
+        <img src="https://i.pravatar.cc/150?img=22" style="width:60px;height:60px;border-radius:50%;">
+        <div><div style="font-size:18px;color:#145214;">★★★★★</div>Entrega dentro do prazo e o produto é muito bom.</div>
+      </div>
+
+      <div style="display:flex;gap:14px;background:white;padding:20px;margin-bottom:18px;border-radius:14px;">
+        <img src="https://i.pravatar.cc/150?img=33" style="width:60px;height:60px;border-radius:50%;">
+        <div>
+          <div style="font-size:18px;color:#145214;">★★★★☆</div>
+          Demorou um pouco pra chegar, mas veio certinho.
+        </div>
+      </div>
+
+      <button class="btn-voltar" id="backToProduct">← Voltar</button>
+    </section>
+
+    <!-- PÁGINA DE ENDEREÇO -->
     <section id="enderecoPage">
       <div class="endereco-box">
 
@@ -160,17 +239,10 @@
       </div>
     </section>
 
-    <!-- CONTATOS -->
-    <footer style="text-align:center; padding:22px; margin-top:20px; background:#d9d9d9; border-top:1px solid #bbb;">
-      <div style="font-size:16px; margin-bottom:6px;">
-        📞 <strong>Atendimento ao cliente:</strong> 0800 777 9000
-      </div>
-      <div style="font-size:16px; margin-bottom:6px;">
-        ✉️ <strong>E-mail de suporte:</strong> suporteappleshopp@gmail.com
-      </div>
-      <div style="font-size:14px; margin-top:10px; color:#444;">
-        © 2025 AppleShopp – Todos os direitos reservados
-      </div>
+    <footer>
+      📞 Atendimento ao cliente: 0800 777 9000<br>
+      ✉️ E-mail de suporte: suporteappleshopp@gmail.com<br><br>
+      © 2025 ShoppigStore – Todos os direitos reservados
     </footer>
 
   </div>
@@ -180,21 +252,38 @@
   const pay = document.getElementById("payBtn");
   const productPage = document.getElementById("productPage");
   const enderecoPage = document.getElementById("enderecoPage");
-  const back = document.getElementById("backBtn");
+  const reviewsPage = document.getElementById("reviewsPage");
+  const openReviews = document.getElementById("openReviews");
+  const backBtn = document.getElementById("backBtn");
+  const backToProduct = document.getElementById("backToProduct");
 
   buy.onclick = () => {
     productPage.style.display = "none";
+    reviewsPage.style.display = "none";
     enderecoPage.style.display = "block";
     window.scrollTo(0,0);
   };
 
-  back.onclick = () => {
+  openReviews.onclick = () => {
+    productPage.style.display = "none";
     enderecoPage.style.display = "none";
+    reviewsPage.style.display = "block";
+    window.scrollTo(0,0);
+  };
+
+  backBtn.onclick = () => {
+    enderecoPage.style.display = "none";
+    reviewsPage.style.display = "none";
     productPage.style.display = "flex";
     window.scrollTo(0,0);
   };
 
-  /* LINK DE PAGAMENTO ATUALIZADO */
+  backToProduct.onclick = () => {
+    reviewsPage.style.display = "none";
+    productPage.style.display = "flex";
+    window.scrollTo(0,0);
+  };
+
   pay.onclick = () => {
     window.location.href = "https://mpago.la/2GsLZDe";
   };
