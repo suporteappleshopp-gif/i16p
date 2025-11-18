@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
@@ -8,9 +8,8 @@
     *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
     body{background:#d9d9d9;color:#000;display:flex;align-items:center;justify-content:center;min-height:100vh}
     .container{width:960px;max-width:95%;background:#efefef;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.08);overflow:hidden}
-    header{display:flex;align-items:center;justify-content:center;gap:12px;padding:18px 24px;border-bottom:1px solid #eee}
+    header{display:flex;align-items:center;gap:12px;padding:18px 24px;border-bottom:1px solid #eee}
     .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px}
-
     main{display:flex;gap:30px;padding:26px}
     .product-image img{max-width:100%;height:auto;border-radius:8px;border:1px solid #e6e9ee}
     .product-info{width:380px;flex-shrink:0}
@@ -53,15 +52,13 @@
       border-radius:8px;
       border:1px solid #ccc;
     }
-
     input{
       width:100%;
       padding:10px;
       margin:8px 0 14px;
-      border:1px solid #ccc;
+      border:1px solid:#ccc;
       border-radius:8px;
     }
-
     .btn-voltar{
       background:#444;
       color:white;
@@ -92,55 +89,13 @@
       background:#e5e5e5;
       border-top:1px solid #ccc;
     }
-
-    /* RESPONSIVIDADE */
-    @media (max-width:768px){
-
-      body{display:block;}
-
-      .container{
-        width:100%;
-        max-width:100%;
-        border-radius:0;
-        box-shadow:none;
-      }
-
-      header img{
-        height:60px;
-      }
-
-      main{
-        flex-direction:column;
-        padding:18px;
-        gap:18px;
-      }
-
-      .product-info{
-        width:100%;
-      }
-
-      .buy-row{
-        flex-direction:column;
-      }
-
-      .resumo img{
-        width:60px;
-      }
-
-      .endereco-box{
-        width:100%;
-        padding:18px;
-      }
-    }
-
   </style>
 </head>
 <body>
-
   <div class="container">
 
     <header>
-      <img src="blackfriday2.jpeg" style="height:80px;">
+      <img src="blackfriday2.jpeg" style="height:80px; margin:auto;">
       <div class="logo"><span>ShoppigStore</span></div>
     </header>
 
@@ -152,7 +107,6 @@
 
       <div class="product-info">
         <div class="product-type">Celular móvel</div>
-
         <div class="product-title">iPhone 16 Pro — Preto (512 GB)</div>
 
         <div class="rating" id="openReviews"
@@ -236,14 +190,11 @@
 
         <button class="btn-final" id="payBtn">Finalizar Pedido</button>
         <button class="btn-voltar" id="backBtn">← Voltar para o produto</button>
+
       </div>
     </section>
 
-    <footer>
-      📞 Atendimento ao cliente: 0800 777 9000<br>
-      ✉️ E-mail de suporte: suporteappleshopp@gmail.com<br><br>
-      © 2025 ShoppigStore – Todos os direitos reservados
-    </footer>
+    <footer>© 2025 ShoppigStore</footer>
 
   </div>
 
@@ -254,7 +205,7 @@
   const enderecoPage = document.getElementById("enderecoPage");
   const reviewsPage = document.getElementById("reviewsPage");
   const openReviews = document.getElementById("openReviews");
-  const backBtn = document.getElementById("backBtn");
+  const back = document.getElementById("backBtn");
   const backToProduct = document.getElementById("backToProduct");
 
   buy.onclick = () => {
@@ -271,7 +222,7 @@
     window.scrollTo(0,0);
   };
 
-  backBtn.onclick = () => {
+  back.onclick = () => {
     enderecoPage.style.display = "none";
     reviewsPage.style.display = "none";
     productPage.style.display = "flex";
@@ -284,8 +235,9 @@
     window.scrollTo(0,0);
   };
 
+  /* 🔥 PAGAMENTO ATUALIZADO AQUI */
   pay.onclick = () => {
-    window.location.href = "https://mpago.la/2GsLZDe";
+    window.location.href = "https://mpago.li/188vHai";
   };
 </script>
 
